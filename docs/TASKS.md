@@ -10,15 +10,15 @@
 
 These steps require your accounts and device. Do them before Phase 1.
 
-- [ ] Create Expo account at https://expo.dev
-- [ ] Install EAS CLI: `npm install -g eas-cli`
-- [ ] Run `eas login` and authenticate
-- [ ] Download OpenDyslexic font files from https://opendyslexic.org/ — you need `OpenDyslexic-Regular.ttf` and `OpenDyslexic-Bold.ttf`
+- [x] Create Expo account at https://expo.dev
+- [x] Install EAS CLI: `npm install -g eas-cli`
+- [x] Run `eas login` and authenticate
+- [x] Download OpenDyslexic font files from https://opendyslexic.org/ — you need `OpenDyslexic-Regular.ttf` and `OpenDyslexic-Bold.ttf`
 - [ ] Have a physical Android phone ready with USB debugging enabled
 - [ ] Create GitHub repo for the project
-- [ ] Create the project directory and cd into it: `mkdir clearread && cd clearread`
-- [ ] Create docs/ folder and copy all doc files into it: `mkdir docs`
-- [ ] Place font files somewhere accessible (Phase 1 will set up assets/fonts/)
+- [x] Create the project directory and cd into it: `mkdir clearread && cd clearread`
+- [x] Create docs/ folder and copy all doc files into it: `mkdir docs`
+- [x] Place font files somewhere accessible (Phase 1 will set up assets/fonts/)
 
 ---
 
@@ -32,17 +32,17 @@ These steps require your accounts and device. Do them before Phase 1.
 **What this does**: Creates the entire project skeleton — Expo project, all dependencies, folder structure, config files, placeholder screens, and navigation. After this phase you have a running app with four empty screens you can tap between.
 
 **Checklist**:
-- [ ] Expo project initialized with TypeScript
-- [ ] All 10 dependencies installed
-- [ ] Full directory structure created
-- [ ] constants.ts with all design tokens
-- [ ] eas.json configured for dev + preview builds
-- [ ] app.json configured with Android package, permissions, camera plugin
-- [ ] tsconfig.json with strict mode
-- [ ] Four placeholder screen files
-- [ ] AppNavigator with typed param list
-- [ ] Font files placed in assets/fonts/
-- [ ] App.tsx with font loading gate and NavigationContainer
+- [x] Expo project initialized with TypeScript
+- [x] All 10 dependencies installed
+- [x] Full directory structure created
+- [x] constants.ts with all design tokens
+- [x] eas.json configured for dev + preview builds
+- [x] app.json configured with Android package, permissions, camera plugin
+- [x] tsconfig.json with strict mode
+- [x] Four placeholder screen files
+- [x] AppNavigator with typed param list
+- [x] Font files placed in assets/fonts/
+- [x] App.tsx with font loading gate and NavigationContainer
 
 **PROMPT** — Copy and paste into Claude Code CLI:
 
@@ -100,11 +100,11 @@ Make sure everything compiles with no TypeScript errors. Run npx tsc --noEmit to
 **What this does**: Creates the SettingsContext provider that manages fontSize, backgroundColor, and readingSpeed globally with AsyncStorage persistence. Every subsequent screen will consume this context.
 
 **Checklist**:
-- [ ] SettingsContext.tsx with full typed interface
-- [ ] AsyncStorage load on mount with loading state
-- [ ] Three update functions that sync state + AsyncStorage
-- [ ] SettingsProvider wrapping the app in App.tsx
-- [ ] useSettings custom hook exported
+- [x] SettingsContext.tsx with full typed interface
+- [x] AsyncStorage load on mount with loading state
+- [x] Three update functions that sync state + AsyncStorage
+- [x] SettingsProvider wrapping the app in App.tsx
+- [x] useSettings custom hook exported
 
 **PROMPT**:
 
@@ -143,12 +143,12 @@ Read docs/CLAUDE.md and docs/ARCHITECTURE.md (the State Management section). The
 **What this does**: Builds the polished Home Screen with ClearRead branding and the "Scan Text" CTA button. This is the first thing judges see.
 
 **Checklist**:
-- [ ] ClearRead app name in OpenDyslexic Bold
-- [ ] Tagline beneath it
-- [ ] Large "Scan Text" CTA button
-- [ ] Cream background, blue accent
-- [ ] Navigation to Camera on button press
-- [ ] Proper accessibility labels
+- [x] ClearRead app name in OpenDyslexic Bold
+- [x] Tagline beneath it
+- [x] Large "Scan Text" CTA button
+- [x] Cream background, blue accent
+- [x] Navigation to Camera on button press
+- [x] Proper accessibility labels
 
 **PROMPT**:
 
@@ -188,13 +188,13 @@ Build src/screens/HomeScreen.tsx as the polished landing screen:
 **What this does**: Builds the camera viewfinder, capture button, OCR processing pipeline, permission handling, and loading state.
 
 **Checklist**:
-- [ ] CameraScreen with live preview
-- [ ] CaptureButton component
-- [ ] ocrProcessor.ts utility
-- [ ] Permission request with friendly rationale
-- [ ] Permission denied fallback UI
-- [ ] Loading overlay during OCR
-- [ ] Navigation to Reader with extracted text
+- [x] CameraScreen with live preview
+- [x] CaptureButton component
+- [x] ocrProcessor.ts utility
+- [x] Permission request with friendly rationale
+- [x] Permission denied fallback UI
+- [x] Loading overlay during OCR
+- [x] Navigation to Reader with extracted text
 
 **PROMPT**:
 
@@ -251,13 +251,13 @@ Important: This screen will NOT work in Expo Go because of ML Kit. The code shou
 **What this does**: Builds the Reader Screen that displays OCR text in dyslexia-friendly format. Does NOT include TTS yet — separating display from TTS reduces blast radius.
 
 **Checklist**:
-- [ ] Reader Screen receives extractedText from nav params
-- [ ] WordHighlighter component renders words as individual spans
-- [ ] Settings integration (fontSize, backgroundColor)
-- [ ] Empty state for no text
-- [ ] Back button and Settings gear in header
-- [ ] ScrollView for long text
-- [ ] TTS controls bar placeholder at bottom
+- [x] Reader Screen receives extractedText from nav params
+- [x] WordHighlighter component renders words as individual spans
+- [x] Settings integration (fontSize, backgroundColor)
+- [x] Empty state for no text
+- [x] Back button and Settings gear in header
+- [x] ScrollView for long text
+- [x] TTS controls bar placeholder at bottom
 
 **PROMPT**:
 
@@ -321,12 +321,12 @@ Run npx tsc --noEmit to verify.
 **What this does**: Wires TTS read-aloud with word-by-word yellow highlighting. The "magic moment."
 
 **Checklist**:
-- [ ] ttsEngine.ts with timeline builder and highlight controller
-- [ ] TTS plays via expo-speech
-- [ ] Words highlight in yellow synced to speech
-- [ ] Play / Pause / Stop controls
-- [ ] Reading speed applied
-- [ ] Cleanup on unmount
+- [x] ttsEngine.ts with timeline builder and highlight controller
+- [x] TTS plays via expo-speech
+- [x] Words highlight in yellow synced to speech
+- [x] Play / Pause / Stop controls
+- [x] Reading speed applied
+- [x] Cleanup on unmount
 
 **PROMPT**:
 
@@ -385,12 +385,12 @@ Run npx tsc --noEmit to verify.
 **What this does**: Builds the Settings Screen with all three controls. Changes apply instantly and persist.
 
 **Checklist**:
-- [ ] FontSizeSlider component
-- [ ] ColorPicker component
-- [ ] SpeedSelector component
-- [ ] Settings screen layout
-- [ ] Preview area with sample text
-- [ ] All changes sync to SettingsContext
+- [x] FontSizeSlider component
+- [x] ColorPicker component
+- [x] SpeedSelector component
+- [x] Settings screen layout
+- [x] Preview area with sample text
+- [x] All changes sync to SettingsContext
 
 **PROMPT**:
 

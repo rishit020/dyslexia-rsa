@@ -206,6 +206,12 @@ These are hard rules. Do not violate them.
 
 ---
 
+## Task Tracking Rule
+
+Whenever a task or phase item is completed **and confirmed working** (TypeScript clean + visible/functional on device or emulator), immediately check it off in `docs/TASKS.md` by replacing `[ ]` with `[x]`. Do this proactively — do not wait to be asked.
+
+---
+
 ## Priority Tiers
 
 When in doubt about what to build or how much to polish, reference these tiers:
